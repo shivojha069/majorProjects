@@ -15,10 +15,10 @@ def login_user(request):
         user = authenticate(request, username=usern, password=passw)
         try:
             login(request,user)
-            return render(request,"indexnew.html")
+            return render(request,"dashboard.html")
         except:
             messages.error(request,"Email or Password incorrect")
-            return render(request,"indexnew.html")
+            return render(request,"dashboard.html")
     return render(request,'login.html')
 
 @login_required
